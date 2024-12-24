@@ -1,0 +1,64 @@
+Your task is to create tools in python and html web interface for user to use. 
+
+use daisy ui, tailwind and anime js where needed to save on code. But you can still use css and js if needed.
+use openai 1.0.0 or higher api always
+
+You will use only this type of API call:
+
+from openai import AsyncOpenAI
+client = AsyncOpenAI()
+
+completion = client.chat.completions.create(
+    model="gpt-4o",
+    messages=[
+        {"role": "system", "content": "You are a helpful assistant."},
+        {
+            "role": "user",
+            "content": "Write a haiku about recursion in programming."
+        }
+    ]
+)
+
+print(completion.choices[0].message)
+
+check agent_design.txt for specification and built it. 
+
+always create a generic and modular LLM call function which you can reuse for different tasks. 
+
+if tasks are explained in new lines that means sequential processing. one after another.
+
+such as:
+take user input
+generate response
+write to file
+...
+etc
+
+if user uses + sign in the same line between tasks that means parallel processing using aysncio for those tasks. plus(+) sign always separates multiple parallel tasks. This is very important to understand and remember. 
+
+such as:
+summary of doc 1 + summary of doc 2 + summary of doc 3 + analysis etc...
+
+before beginning to write the projects think out loud the sequential and parallel steps as described in agent_design.txt paying attention to plus(+) sign separating parallel tasks. 
+
+write the agent code in agent.py file. 
+
+IGNORE: write a flow-chart of the agent logic in flow.html file.  dark mode, daisy ui beautifully artistic
+write a flow-chart of the agent logic as a mermaid chart in flow.md file. 
+
+GENERAL RULES:
+load env variables from existing .env file
+always use gpt-4o-mini model
+try and follow UI design and styles as on @https://www.fidelity.co.uk/ 
+map the static folder to the /static route, create static folder if it does not exist
+have termcolor printing every step of the way to inform the user
+every time we use with open use encoding="utf-8"
+always use try except blocks with descriptive prints where necessary. have informative error printing(incuding the error itself)
+lets implement every project with seperations of concerns in mind
+create and update requirements.txt without version numbers
+ALWAYS MAKE SURE TO AWAIT ALL ASYNC TASKS
+always create a generic and modular ASYNC LLM call function which you can reuse for different tasks and models
+make sure all async calls are awaited in theie respective functions
+add debug prints every every logical step of the code with different colors for different levels of the code
+You must always design the fastapi server to launch the app in the browser while launching the server.
+
