@@ -1,0 +1,10 @@
+The User will enter some text and they expect an audio output of the text entered.
+The agent will use OpenAi api to generate the audio.
+
+The audio will be played and displayed on the screen.
+
+Agent shall refer this url:
+    https://platform.openai.com/docs/guides/text-to-speech
+for details on how to convert the text to audio.
+
+
